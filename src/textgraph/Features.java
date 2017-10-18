@@ -559,7 +559,7 @@ public class Features implements ActionListener {
     
     GraphViz gv = new GraphViz();
     GraphViz.setdir(dir);
-    gv.addln(gv.start_graph());
+    gv.addln(gv.startgraph());
     String line = "";
     for (int i = 0; i < g.n0; ++i) {
       line = "";
@@ -582,7 +582,7 @@ public class Features implements ActionListener {
         }
       }
     }
-    gv.addln(gv.end_graph());
+    gv.addln(gv.endgraph());
     
     String name = MediumWindow.pictureName.getText();
     String type = (String) MediumWindow.fileTypeChooser.getSelectedItem();
@@ -688,7 +688,7 @@ public class Features implements ActionListener {
     
     GraphViz gv = new GraphViz();
     GraphViz.setdir(dir);
-    gv.addln(gv.start_graph());
+    gv.addln(gv.startgraph());
     ArrayList<String> paths = new ArrayList<String>();
     String path;
     String line;
@@ -748,7 +748,7 @@ public class Features implements ActionListener {
         }
       }
     }
-    gv.addln(gv.end_graph());
+    gv.addln(gv.endgraph());
     String name = MediumWindow.pictureName.getText();
     String type = (String) MediumWindow.fileTypeChooser.getSelectedItem();
     String fullName = dir + "/" + name + "-" + word + "-" + "ShortestPath." + type;
@@ -774,7 +774,7 @@ public class Features implements ActionListener {
     }
     GraphViz gv = new GraphViz();
     GraphViz.setdir(dir);
-    gv.addln(gv.start_graph());
+    gv.addln(gv.startgraph());
     
     int x = g.getIndex(word1);
     int y = g.getIndex(word2);
@@ -819,7 +819,7 @@ public class Features implements ActionListener {
           }
         }
       }
-      gv.addln(gv.end_graph());
+      gv.addln(gv.endgraph());
       File out = new File(fullName);
       gv.writeGraphToFile(gv.getGraph(gv.getDotSource(), type), out);
     }

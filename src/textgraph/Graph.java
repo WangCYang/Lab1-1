@@ -284,21 +284,22 @@ public class Graph {
    */
   public ArrayList<Integer> getShortestPath(int u, int v) {
     int[][] postNode = mygetShortestPath(u);
+    int u0 = u;
     int temp;
-    getShortestPathBetweenTwoNode(u, v, postNode);
+    getShortestPathBetweenTwoNode(u0, v, postNode);
     ArrayList<Integer> path = new ArrayList<Integer>();
-    while (u != v) {
-      path.add(u);
-      temp = u;
+    while (u0 != v) {
+      path.add(u0);
+      temp = u0;
       boolean flag = true;
       for (int i = 0; i < n0; i++) {
-        if (i != u && postNode[u][i] > 0) {
+        if (i != u0 && postNode[u0][i] > 0) {
           temp = i;
           flag = false;
           break;
         }
       }
-      u = temp;
+      u0 = temp;
       if (flag) {
         path.add(-1);
         break;
